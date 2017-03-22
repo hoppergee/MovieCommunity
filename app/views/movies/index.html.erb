@@ -4,7 +4,7 @@
 	</div>
 	<table class="table table-hover">
 		<thead>
-			<tr>
+			<tr class="text-center">
 				<td>#</td>
 				<td>电影名</td>
 				<td>简介</td>
@@ -13,10 +13,10 @@
 		</thead>
 		<tbody>
 			<% @movies.each do |movie| %>
-				<tr>
+				<tr class="text-center">
 					<td>#</td>
 					<td><%= link_to(movie.title, movie_path(movie)) %></td>
-					<td><%= movie.description %></td>
+					<td width="60%"><%= movie.description %></td>
 					<td><%= movie.theaterdate %></td>
 					<td>
 						<% if current_user %>
