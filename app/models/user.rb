@@ -13,4 +13,12 @@ class User < ApplicationRecord
   def is_follower_of?(movie)
     participated_movies.include?(movie)
   end
+  
+  def follow!(movie)
+    participated_movies << movie
+  end
+  
+  def unfollow!(movie)
+    participated_movies.delete(movie)
+  end
 end
