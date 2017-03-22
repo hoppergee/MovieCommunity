@@ -10,4 +10,23 @@
 	<h2><%= @movie.title %></h2>
 	<p><%= @movie.theaterdate %></p>
 	<p><%= @movie.description %></p>
+	
+	<table class="table">
+		<thead>
+			<tr>
+				<th>评论内容</th>
+				<th>评论人</th>
+				<th>评论时间</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @reviews.each do |review| %>
+				<tr>
+					<td><%= review.content %></td>
+					<td><%= review.user.email %></td>
+					<td><%= review.created_at %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
 </div>
