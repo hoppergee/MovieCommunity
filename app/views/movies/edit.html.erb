@@ -1,0 +1,29 @@
+<div class="col-md-4 col-md-offset-4">
+	<h2>编辑电影信息</h2>
+	
+	<hr>
+	<%= form_for @movie do |f| %>
+	
+	电影名称：
+	<%= f.text_field :title %>
+	<br>
+	导演：
+	<br>
+	编剧：
+	<br>
+	主演：
+	<br>
+	上映日期：
+	<%= f.text_field :theaterdate %>
+	<br>
+	片长
+	<br>
+	剧情简介:
+	<br>
+	<%= f.text_area :description %>
+	<br>
+	
+	<%= f.submit "提交", :disable_with => 'Submiting...' %>
+	<% end %>
+	
+</div>
