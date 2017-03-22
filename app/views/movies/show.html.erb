@@ -3,8 +3,10 @@
 		
 		<span class="pull-right">
 			<% if current_user && current_user.is_follower_of?(@movie) %>
+				<%= link_to("停止关注", unfollow_movie_path(@movie), method: :post, class: "btn btn-default") %>
 				<label class="label label-success"> 已收藏 </label>
 			<% else %>
+				<%= link_to("收藏电影", follow_movie_path(@movie), method: :post, class: "btn btn-default") %>
 				<label class="label label-warning"> 未收藏 </label>
 			<% end %>
 		</span>

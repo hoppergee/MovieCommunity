@@ -45,6 +45,32 @@ class MoviesController < ApplicationController
     redirect_to movies_path
   end
   
+  def follow
+    @movie = Movie.find(params[:id])
+    
+    if !current_user.is_follower_of?(@movie)
+      current_user.follow!(@movie)
+      flash[:notice] = "成功收藏本电影"
+    else
+      flash[:warning] = "你已经收藏了该电影"
+    end
+    
+    redirect_to movie_path(@movie)
+  end
+  
+  def unfollow
+    @movie = Movie.find(params[:id])
+    
+    if current_user.is_follower_of?(@movie)
+      current_user.unfollow!(@movie)
+      flash[:alert] = "已经停止关注该电影"
+    else
+      flash[:waring] = "您原本就没有收藏该电影..."
+    end
+    
+    redirect_to movie_path(@movie)
+  end
+  
   private
   def movie_params
     params.require(:movie).permit(:title, :theaterdate, :description)
