@@ -1,8 +1,8 @@
 <%= simple_form_for @movie do |f|%>
 	<div class="form-group">
-		<%= f.input :title, input_html: { class: "form-control" } %>
-		<%= f.input :theaterdate, input_html: { class: "form-control"}%>
-		<%= f.input :description, input_html: { class: "form-control" } %>
+		<%= f.input :title, label: '电影名称', input_html: { class: "form-control" } %>
+		<%= f.input :theaterdate, label: '上映日期', input_html: { class: "form-control"}%>
+		<%= f.input :description, label: '简介', input_html: { class: "form-control" } %>
 	</div>
 	<%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
 <% end %>
