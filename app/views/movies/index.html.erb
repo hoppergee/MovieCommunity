@@ -16,7 +16,7 @@
 				<tr class="text-center">
 					<td>#</td>
 					<td><%= link_to(movie.title, movie_path(movie)) %></td>
-					<td width="60%"><%= movie.description %></td>
+					<td width="60%" class="text-left"><%= movie.description %></td>
 					<td><%= movie.theaterdate %></td>
 					<td>
 						<% if current_user %>
